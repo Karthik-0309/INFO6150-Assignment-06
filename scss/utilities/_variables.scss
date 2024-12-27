@@ -1,0 +1,24 @@
+$primary-color: rgba(227, 142, 106, 1);
+$font-family: "Poppins", sans-serif;
+$text-color1: #fff;
+$text-color2: #222;
+
+:root {
+  --primary-color: #e38e6a;
+  --font-family: "Poppins", sans-serif;
+  --text-color1: #fff;
+  --text-color2: #222;
+}
+// _variables.scss
+$colors: (
+  primary: #3498db,
+  secondary: #2ecc71,
+  success: #28a745,
+  danger: #dc3545,
+  warning: #f39c12,
+);
+
+// Example of using color map
+.button {
+  background-color: map-get($colors, primary);
+}

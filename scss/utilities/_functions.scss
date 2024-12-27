@@ -1,0 +1,46 @@
+@function text-align($alignment) {
+  @return $alignment;
+}
+
+// _functions.scss
+@function shade-or-tint($color, $amount) {
+  @if (lightness($color) > 50%) {
+    @return darken($color, $amount);
+  } @else {
+    @return lighten($color, $amount);
+  }
+}
+
+// Usage Example
+.button {
+  background-color: shade-or-tint($primary-color, 10%);
+}
+
+// _functions.scss
+@function get-nth-item($list, $index) {
+  @return nth($list, $index);
+}
+
+// Usage Example
+$spacing-list: 0px, 8px, 16px, 24px, 32px;
+.margin-medium {
+  margin-top: get-nth-item($spacing-list, 3); // Outputs 16px
+}
+
+// _functions.scss
+@function color-for-status($status) {
+  @if $status == "success" {
+    @return #28a745;
+  } @else if $status == "error" {
+    @return #dc3545;
+  } @else if $status == "warning" {
+    @return #f39c12;
+  } @else {
+    @return #3498db;
+  }
+}
+
+// Usage Example
+.alert {
+  background-color: color-for-status("warning"); // Outputs warning color
+}
